@@ -1,0 +1,10 @@
+[Unit]
+Description=Ollama LLM API Server
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/ollama serve
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
