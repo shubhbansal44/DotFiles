@@ -1,0 +1,5 @@
+.cache/
+.local/
+*.swp
+*~
+*.log
