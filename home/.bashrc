@@ -5,71 +5,50 @@
 # Exit if not running interactively
 [[ $- != *i* ]] && return
 
-# ----------------------------- #
-#        General Settings       #
-# ----------------------------- #
-
-# Colorize grep output
+# Set grep to use color in output
 alias grep='grep --color=auto'
 
-# Prompt Style: [user@host current-directory]$
+# Set prompt to show user, host, and current directory
 PS1='[\u@\h \W]\$ '
 
-# ----------------------------- #
-#        Help Commands          #
-# ----------------------------- #
+# Add local bin to PATH
+export PATH="$HOME/.local/bin:$PATH"
 
-# Explains each bashrc aliases and functions
-alias help-bash='~/scripts/help-bash.sh'
+# Alias to explain custom aliases and functions
+alias help-bash='~/.local/bin/help-bash.sh'
 
-# Ollama AI model for terminal integrated chats
-alias ask="~/scripts/ask.sh"
-
-# ----------------------------- #
-#     Wi-Fi Utility Aliases     #
-# ----------------------------- #
+# Alias to use Ollama AI model via terminal
+alias ask="~/.local/bin/ask.sh"
 
 # Connect to Wi-Fi using custom script
-alias wifi-connect='~/scripts/wifi-connect.sh'
+alias wifi-connect='~/.local/bin/wifi-connect.sh'
 
-# Turn Wi-Fi ON and send notification
+# Enable Wi-Fi and send a desktop notification
 alias wifi-on='nmcli radio wifi on && echo "✅ Wi-Fi enabled" && notify-send "Wi-Fi" "✅ Enabled"'
 
-# Turn Wi-Fi OFF and send notification
+# Disable Wi-Fi and send a desktop notification
 alias wifi-off='nmcli radio wifi off && echo "📴 Wi-Fi disabled" && notify-send "Wi-Fi" "📴 Disabled"'
 
-# Show Wi-Fi device status
+# Show current Wi-Fi device status
 alias wifi-status='nmcli device status | grep wifi || echo "No Wi-Fi device found"'
 
-# List nearby Wi-Fi networks
+# List available Wi-Fi networks
 alias wifi-list='nmcli device wifi list | less'
 
-# Show currently connected Wi-Fi SSID
+# Show SSID of currently connected Wi-Fi
 alias wifi-current='nmcli -t -f active,ssid dev wifi | grep yes | cut -d: -f2 || echo "Not connected"'
 
-# ----------------------------- #
-#        Starship Prompt        #
-# ----------------------------- #
-
-# Use custom Starship config
+# Load Starship prompt with custom config
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 eval "$(starship init bash)"
 
-# ----------------------------- #
-#        Hyprland Start         #
-# ----------------------------- #
-
-# Start Hyprland session
+# Start Hyprland window manager session
 alias start='exec Hyprland'
 
-# ----------------------------- #
-#          Fastfetch            #
-# ----------------------------- #
-
-# Quick alias for fastfetch
+# Basic alias for running fastfetch
 alias f="fastfetch"
 
-# Fancy fastfetch with logo and padding
+# Custom fastfetch display with logo and spacing
 typefetch() {
     local padding_top=3
     for ((i = 0; i < padding_top; i++)); do echo ""; done
@@ -79,35 +58,49 @@ typefetch() {
         --logo-padding-left 3
 }
 
-# ----------------------------- #
-#     Config File Shortcuts     #
-# ----------------------------- #
-
-# Open Hyprland-related config files
+# Open Hyprland main config in VS Code
 alias hdc='code ~/.config/hypr/hyprland.conf'
+
+# Open Hyprlock config in VS Code
 alias hkc='code ~/.config/hypr/hyprlock.conf'
+
+# Open Hypridle config in VS Code
 alias hic='code ~/.config/hypr/hypridle.conf'
 
-# Bash configs
+# Open .bashrc in VS Code
 alias brc='code ~/.bashrc'
+
+# Source .bashrc to apply changes
 alias sbrc='source ~/.bashrc'
+
+# Open .bash_profile in VS Code
 alias bfr='code ~/.bash_profile'
 
-# Other configs
+# Open Rofi config in VS Code
 alias rfc='code ~/.config/rofi/config.rasi'
+
+# Open Waybar config in VS Code
 alias wrc='code ~/.config/waybar/config.jsonc'
+
+# Open Waybar CSS in VS Code
 alias wrcss='code ~/.config/waybar/style.css'
+
+# Open Fastfetch config in VS Code
 alias ffc='code ~/.config/fastfetch/config.jsonc'
+
+# Open Starship config in VS Code
 alias sst='code ~/.config/starship/starship.toml'
+
+# Open Kitty terminal config in VS Code
 alias ktc='code ~/.config/kitty/kitty.conf'
+
+# Open Dunst notification config in VS Code
 alias drc='code ~/.config/dunst/dunstrc'
+
+# Open Cava audio visualizer config in VS Code
 alias cvc='code ~/.config/cava/config'
 
-# ----------------------------- #
-#     Server Port Utilities     #
-# ----------------------------- #
-
-# List all active JavaScript-related servers
+# List active Node/JS-related servers with PID and port
 listports() {
   echo -e "\033[1;34mListing active JS servers:\033[0m"
   printf "\033[1;33m%-8s %-8s %-20s\033[0m\n" "PID" "PORT" "COMMAND"
@@ -123,7 +116,7 @@ listports() {
   done
 }
 
-# Kill server process by port
+# Kill process running on given port
 killport() {
   if [ -z "$1" ]; then
     echo -e "\033[1;31mUsage:\033[0m killport <port>"
@@ -141,26 +134,22 @@ killport() {
   fi
 }
 
-# ----------------------------- #
-#         Directory View        #
-# ----------------------------- #
-
-# Enhanced ls using exa
+# Use exa for improved ls with icons and sorting
 alias ls='exa -al --icons --color=always --group-directories-first --time-style=iso'
 
-# Tree view (2 levels)
+# Tree view up to 2 levels deep
 alias lst='exa -T --level=2 --icons --color=always'
 
-# Show with Git status
+# Show files with Git status
 alias lsg='exa -al --git --icons --color=always --group-directories-first'
 
-# Sort files by size
+# List files sorted by size
 alias lss='exa -al --sort=size --icons'
 
-# List only directories
+# Show only directories
 alias lsd='exa -D --icons --group-directories-first'
 
-# Directory summary with size and contents
+# Display summary of a directory: size, files, and subdirs
 dsummary() {
     local dir="${1:-.}"
 
