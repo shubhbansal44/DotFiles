@@ -1,0 +1,26 @@
+#colours
+BASH_COLOR_RED='\033[0;31m'
+BASH_COLOR_NC='\033[0m' # No Color
+BASH_COLOR_Black='\033[0;30m'     
+BASH_COLOR_DarkGray='\033[1;30m'
+BASH_COLOR_Red='\033[0;31m'     
+BASH_COLOR_LightRed='\033[1;31m'
+BASH_COLOR_Green='\033[0;32m'     
+BASH_COLOR_LightGreen='\033[1;32m'
+BASH_COLOR_BrownOrange='\033[0;33m'     
+BASH_COLOR_Yellow='\033[1;33m'
+BASH_COLOR_Blue='\033[0;34m'     
+BASH_COLOR_LightBlue='\033[1;34m'
+BASH_COLOR_Purple='\033[0;35m'     
+BASH_COLOR_LightPurple='\033[1;35m'
+BASH_COLOR_Cyan='\033[0;36m'     
+BASH_COLOR_LightCyan='\033[1;36m'
+BASH_COLOR_LightGray='\033[0;37m'     
+BASH_COLOR_White='\033[1;37m'
+
+BASH_COLOR_BGBLACK='\033[1;40m'
+BASH_COLOR_BGDEFAULT='\033[0;49m'
+
+BASH_COLOR_BOLD='\033[0;1m'
+BASH_COLOR_UNDERLINED='\033[0;4m'
+BASH_COLOR_BLINK='\033[0;5m'
