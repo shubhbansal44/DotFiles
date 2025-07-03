@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wallpaper_dir="$HOME/Wallpapers"
+wallpaper_dir="$HOME/Pictures/Wallpapers"
 index_file="$HOME/.cache/current_wallpaper_index"
 lockscreen_wall="$HOME/.config/assets/hyprlock/lock-screen.png"
 
