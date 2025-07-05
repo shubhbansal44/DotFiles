@@ -43,7 +43,7 @@ run_command "yay -S --noconfirm --needed pipewire pipewire-pulse wireplumber pam
 
 # Install desktop GUI applications
 print_info "Installing GUI applications..."
-run_command "yay -S --noconfirm --needed brave-bin code obsidian spotify kitty nautilus" "Install GUI applications" "yes" "no"
+run_command "yay -S --noconfirm --needed brave-bin code obsidian spotify ristretto kitty nautilus" "Install GUI applications" "yes" "no"
 
 # Install Hyprland window manager and related appearance tools
 print_info "Installing Hyprland and UI tools..."

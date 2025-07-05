@@ -13,6 +13,7 @@ cmake
 cmatrix
 code
 curl
+dnsmasq
 dosfstools
 dunst
 efibootmgr
@@ -22,6 +23,7 @@ figlet
 gcc
 gdb
 git
+git-filter-repo
 grimblast-git
 grub
 htop
@@ -65,8 +67,10 @@ qt5-graphicaleffects
 qt5-wayland
 qt5ct
 qt6ct
+ristretto
 rofi
 rofimoji
+rsync
 rust
 spotify
 starship

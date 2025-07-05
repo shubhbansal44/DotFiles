@@ -38,6 +38,12 @@ alias wifi-list='nmcli device wifi list | less'
 # Show SSID of currently connected Wi-Fi
 alias wifi-current='nmcli -t -f active,ssid dev wifi | grep yes | cut -d: -f2 || echo "Not connected"'
 
+# Hotspot utility
+alias hotspot='~/.local/bin/hotspot.sh'
+
+# Dotfiles update
+alias update-dots='~/.local/bin/update.sh'
+
 # Load Starship prompt with custom config
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 eval "$(starship init bash)"
