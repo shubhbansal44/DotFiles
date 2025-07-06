@@ -90,9 +90,14 @@ check_root() {
     log "Not run as root. Exiting."
     exit 1
   fi
-  print_success "Sudo Acess Granted."
-  log "Running as root"
+
+  # Capture the invoking user
+  export SUDO_USER=$(logname 2>/dev/null || echo "$USER")
+
+  print_success "Sudo access granted as $SUDO_USER"
+  log "Running as root, original user: $SUDO_USER"
 }
+
 
 # Verify if the system is Arch Linux
 check_arch() {
@@ -124,11 +129,18 @@ run_command() {
   local confirm_first="${3:-yes}"  # Ask before executing
   local use_sudo="${4:-no}"        # Use sudo?
 
-  local full_cmd="$cmd"
-  [[ "$use_sudo" == "yes" ]] && full_cmd="sudo $cmd"
+  local full_cmd=""
+
+  # Decide command execution mode
+  if [[ "$use_sudo" == "yes" ]]; then
+    full_cmd="sudo $cmd"
+  else
+    full_cmd="sudo -u $SUDO_USER $cmd"
+  fi
 
   print_info "Command: $full_cmd"
   log "Preparing to run: $description"
+  log "Command: $full_cmd"
 
   if [[ "$confirm_first" == "yes" ]]; then
     if ! confirm "$description"; then
