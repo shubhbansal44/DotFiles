@@ -4,6 +4,7 @@
 CONFIG="$HOME/.config/hotspot.conf"
 DEFAULT_SSID="banshee"
 DEFAULT_PASSWORD="reqw2@7yr^ti"
+HOTSPOT_STATE="$HOME/.cache/hotspot_state"
 INTERFACE="wlo1"
 
 # ─── Load Saved Config ─────────────────────────
@@ -39,6 +40,14 @@ validate_interface() {
   fi
 }
 
+# ─── Dunst Notification ────────────────────────
+notify() {
+  # Send a desktop notification using dunst
+  if command -v dunstify &> /dev/null; then
+    notify-send "Hotspot Connect" "$1"
+  fi
+}
+
 # ─── Start Hotspot ─────────────────────────────
 start_hotspot() {
   validate_interface
@@ -47,9 +56,12 @@ start_hotspot() {
   if [[ $? -ne 0 ]]; then
     echo -e "${RED}❌ Failed to start hotspot:${RESET}"
     echo -e "$OUTPUT"
+    notify "❌ Hotspot failed to start: $OUTPUT"
     exit 1
   else
+    echo "on" > "$HOTSPOT_STATE"
     echo -e "${GREEN}✅ Hotspot started successfully.${RESET}"
+    notify "Hotspot '${SSID}' started successfully."
   fi
 }
 
@@ -58,9 +70,11 @@ stop_hotspot() {
   if nmcli con show --active | grep -q "Hotspot"; then
     echo -e "${RED}🔌 Stopping Hotspot...${RESET}"
     nmcli connection down Hotspot &>/dev/null
+    echo "off" > "$HOTSPOT_STATE"
     echo -e "${GREEN}✅ Hotspot stopped.${RESET}"
+    notify "Hotspot '${SSID}' stopped."
   else
-    echo -e "${YELLOW}ℹ️  No active hotspot found.${RESET}"
+    echo -e "${YELLOW}ℹ️ No active hotspot found.${RESET}"
   fi
 }
 
@@ -98,7 +112,7 @@ show_status() {
     echo -e "📶 SSID: ${BOLD}${SSID}${RESET}"
     echo -e "📡 Interface: ${BOLD}${DEVICE}${RESET}"
   else
-    echo -e "${YELLOW}⚠️  No active hotspot connection.${RESET}"
+    echo -e "${YELLOW}⚠️ No active hotspot connection.${RESET}"
   fi
 }
 
@@ -119,7 +133,7 @@ password() {
     HOTSPOT_CON=$(nmcli -g NAME connection show | grep -i Hotspot)
 
     if [[ -z "$HOTSPOT_CON" ]]; then
-      echo -e "${YELLOW}⚠️  No hotspot connection profile found.${RESET}"
+      echo -e "${YELLOW}⚠️ No hotspot connection profile found.${RESET}"
       return 1
     fi
 
@@ -135,6 +149,36 @@ password() {
   fi
 }
 
+# ─── Restore Hotspot ──────────────────────────────────────
+restore() {
+  # Check if state file exists
+  if [[ ! -f "$HOTSPOT_STATE" ]]; then
+    echo -e "${YELLOW}⚠️ Hotspot state file missing.${RESET}"
+    return
+  fi
+
+  # Only proceed if hotspot was ON
+  if grep -q "on" "$HOTSPOT_STATE"; then
+    # Protect against restoring right after a reboot
+    local uptime_sec=$(awk '{print int($1)}' /proc/uptime)
+    if (( uptime_sec < 120 )); then
+      return
+    fi
+
+    # If already active, check if it's actually broadcasting
+    if nmcli con show --active | grep -q "Hotspot"; then
+      nmcli connection down Hotspot &>/dev/null
+      sleep 1
+    fi
+
+    echo -e "${BLUE}🔄 Restoring hotspot...${RESET}"
+    start_hotspot
+  else
+    echo -e "${YELLOW}ℹ️ Hotspot was off before sleep. Nothing to restore.${RESET}"
+  fi
+}
+
+
 # ─── Main ──────────────────────────────────────
 case "$1" in
   on)      start_hotspot ;;
@@ -143,6 +187,7 @@ case "$1" in
   status)  show_status ;;
   help|"") show_help ;;
   -p)      password ;;
+  --restore-if-needed) restore;;
   *)
     echo -e "${RED}❌ Unknown option: $1${RESET}"
     show_help

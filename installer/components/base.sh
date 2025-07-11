@@ -31,7 +31,7 @@ run_command "yay -S --noconfirm --needed networkmanager nm-connection-editor blu
 
 # Install shell and terminal tools (CLI, dev tools, visuals)
 print_info "Installing shell and CLI tools..."
-run_command "yay -S --noconfirm --needed git rust gcc gdb cmake make nano neovim vim htop eza fastfetch figlet chafa jp2a ncdu starship xplr cava cmatrix imagemagick" "Install terminal and dev CLI tools" "yes" "no"
+run_command "yay -S --noconfirm --needed git rust gcc gdb cmake make nano git-lfs dysk fzf neovim vim htop eza fastfetch figlet chafa jp2a ncdu starship xplr cava cmatrix imagemagick" "Install terminal and dev CLI tools" "yes" "no"
 
 # Install fonts (Nerd fonts, emoji, dev fonts)
 print_info "Installing fonts..."
@@ -43,7 +43,7 @@ run_command "yay -S --noconfirm --needed pipewire pipewire-pulse wireplumber pam
 
 # Install desktop GUI applications
 print_info "Installing GUI applications..."
-run_command "yay -S --noconfirm --needed brave-bin code obsidian spotify ristretto kitty nautilus" "Install GUI applications" "yes" "no"
+run_command "yay -S --noconfirm --needed brave-bin whatsdesk-bin visual-studio-code-bin obsidian spotify ristretto kitty nautilus" "Install GUI applications" "yes" "no"
 
 # Install Hyprland window manager and related appearance tools
 print_info "Installing Hyprland and UI tools..."

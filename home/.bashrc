@@ -64,6 +64,13 @@ typefetch() {
         --logo-padding-left 3
 }
 
+flex() {
+    fastfetch \
+        --logo ~/.config/fastfetch/assets/flex.txt \
+        --logo-type file \
+        --logo-padding-left 3
+}
+
 # Open Hyprland main config in VS Code
 alias hdc='code ~/.config/hypr/hyprland.conf'
 

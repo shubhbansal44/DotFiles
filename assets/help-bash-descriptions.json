@@ -32,5 +32,8 @@
   "lsg": "Shows files with Git status, icons, and grouping using exa.",
   "lss": "Lists files sorted by size with icons using exa.",
   "lsd": "Lists only directories in the current location using exa.",
-  "dsummary": "Displays a summary of a directory's size, files, and subdirectories with colorized output."
+  "dsummary": "Displays a summary of a directory's size, files, and subdirectories with colorized output.",
+  "hotspot": " Enables 'hotspot.sh' script execution from anywhere in the filesystem.",
+  "update-dots": " Updates local dotfiles with `update.sh` script.",
+  "flex": " Displays system information with custom logo using 'fastfetch' command."
 }
