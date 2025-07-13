@@ -31,7 +31,7 @@ run_command "yay -S --noconfirm --needed networkmanager nm-connection-editor blu
 
 # Install shell and terminal tools (CLI, dev tools, visuals)
 print_info "Installing shell and CLI tools..."
-run_command "yay -S --noconfirm --needed git rust gcc gdb cmake make nano git-lfs pacman-contrib lm_sensors dysk fzf neovim vim htop eza fastfetch figlet chafa jp2a ncdu starship xplr cava cmatrix imagemagick" "Install terminal and dev CLI tools" "yes" "no"
+run_command "yay -S --noconfirm --needed git rust gcc gdb cmake make nano btop git-lfs pacman-contrib lm_sensors dysk fzf neovim vim htop eza fastfetch figlet chafa jp2a ncdu starship xplr cava cmatrix imagemagick" "Install terminal and dev CLI tools" "yes" "no"
 
 # Install fonts (Nerd fonts, emoji, dev fonts)
 print_info "Installing fonts..."

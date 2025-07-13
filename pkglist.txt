@@ -6,6 +6,7 @@ bluez
 bluez-utils
 brave-bin
 brightnessctl
+btop
 cava
 chafa
 cliphist
