@@ -44,6 +44,12 @@ alias hotspot='~/.local/bin/hotspot.sh'
 # Dotfiles update
 alias update-dots='~/.local/bin/update.sh'
 
+# Standard system update – safe for regular use
+alias update='sudo pacman -Syu'
+
+# Force database refresh – use only if mirrors or sync are broken
+alias forceupdate='sudo pacman -Syyu'
+
 # Load Starship prompt with custom config
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 eval "$(starship init bash)"

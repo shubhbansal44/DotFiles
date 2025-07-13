@@ -43,6 +43,7 @@ libnotify
 linux
 linux-firmware
 linux-headers
+lm_sensors
 make
 man-db
 mpv
@@ -59,6 +60,7 @@ npm
 nwg-look
 obsidian
 os-prober
+pacman-contrib
 pamixer
 pavucontrol
 pipewire

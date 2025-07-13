@@ -12,26 +12,34 @@
     ],
     "modules-center": [
         "hyprland/window"
+        // "hyprland/app"
     ],
     "modules-right": [
         "tray",
         "memory",
+        "custom/gpu",
         "cpu",
         "network",
         "bluetooth",
         "battery",
+        "custom/updates",
         "backlight",
         "pulseaudio",
         "pulseaudio#microphone"
     ],
+    "hyprland/app": {
+        "format": "󰣇 {}",
+        "exec": "hyprctl activewindow -j | jq -r '.class'",
+        "interval": 1
+    },
     "hyprland/window": {
         "format": "󰣇 {}"
     },
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "on-click": "activate"
-        //"format": "{icon}",
+        "on-click": "activate",
+        "format": "{icon}"
     },
     "tray": {
         "icon-size": 13,
@@ -90,6 +98,12 @@
             "󰂂",
             "󰁹"
         ]
+    },
+    "custom/updates": {
+        "format": "󰚰 {}",
+        "exec": "checkupdates | wc -l",
+        "interval": 1800,
+        "tooltip": true
     },
     "pulseaudio": {
         "format": "{icon}  {volume}%",
@@ -154,10 +168,15 @@
             "█"
         ]
     },
+    "custom/gpu": {
+        "format": "󰍹 {}",
+        "exec": "sensors | grep -m 1 'edge:' | awk '{print $2}' | tr -d '+'",
+        "interval": 10
+    },
     "network": {
         "tooltip": true,
         "format-wifi": "  {essid}",
-        "format-ethernet": "󰈀 ",
+        "format-ethernet": "󰈀 LAN",
         "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": "󰖪 ",

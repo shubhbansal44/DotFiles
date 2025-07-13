@@ -49,6 +49,8 @@ window#waybar {
 #cpu,
 #memory,
 #workspaces,
+#custom-updates,
+#custom-gpu,
 #tray,
 #backlight {
     background: #09090c;
@@ -58,7 +60,7 @@ window#waybar {
     /* border: 1px solid #181825; */
 }
 
-#backlight {
+#custom-updates {
     border-radius: 10px 0px 0px 10px;
 }
 
