@@ -60,6 +60,12 @@ alias start='exec Hyprland'
 # Basic alias for running fastfetch
 alias f="fastfetch"
 
+# Fuzzy search man pages
+alias man='man -k . | awk '\''{print $1}'\'' | sort -u | fzf --preview="man {} | col -bx | head -n 40" | xargs -r man'
+
+# Fuzzy search directories and open in vs code
+alias code="~/.local/bin/code-fzf.sh"
+
 # Custom fastfetch display with logo and spacing
 typefetch() {
     local padding_top=3

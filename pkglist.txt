@@ -1,6 +1,8 @@
 amd-ucode
 base
 base-devel
+bat
+bind
 blueman
 bluez
 bluez-utils
@@ -20,6 +22,7 @@ dysk
 efibootmgr
 eza
 fastfetch
+fd
 figlet
 fzf
 gcc
@@ -35,6 +38,7 @@ hyprland
 hyprlock
 hyprpicker
 imagemagick
+intellij-idea-community-edition
 jp2a
 kitty
 kvantum
@@ -81,6 +85,7 @@ spotify
 starship
 sudo
 swww
+tree
 ttf-cascadia-code-nerd
 ttf-cascadia-mono-nerd
 ttf-fira-code
