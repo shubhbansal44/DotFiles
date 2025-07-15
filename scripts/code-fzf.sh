@@ -32,6 +32,7 @@ SELECTED=$(printf "%s\n" "${DIRS[@]}" | sort -u | fzf \
 
 # Open in VS Code (existing window if running)
 if [[ -n "$SELECTED" ]]; then
+  echo -n "$SELECTED" | wl-copy
   if pgrep -x "code" > /dev/null; then
     code --reuse-window "$SELECTED"
   else

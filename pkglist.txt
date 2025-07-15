@@ -85,6 +85,7 @@ spotify
 starship
 sudo
 swww
+tldr
 tree
 ttf-cascadia-code-nerd
 ttf-cascadia-mono-nerd
