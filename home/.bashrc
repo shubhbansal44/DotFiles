@@ -58,13 +58,7 @@ eval "$(starship init bash)"
 alias start='exec Hyprland'
 
 # Basic alias for running fastfetch
-alias f="fastfetch"
-
-# Fuzzy search directories and open in vs code
-alias work="~/.local/bin/code-fzf.sh"
-
-# Fuzzy search files and open in vs code
-alias edit="~/.local/bin/code-file-fzf.sh"
+alias f="fastfetch --logo-padding-left 3"
 
 # Fuzzy search man pages
 alias man="~/.local/bin/man-fzf.sh"

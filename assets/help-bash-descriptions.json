@@ -39,7 +39,5 @@
   "update": "Updates system packages with Pacman.",
   "forceupdate": "Updates the system packages with a force refresh.",
   "man": "Displays man pages using fzf and sorts unique commands alphabetically.",
-  "tldr": "Displays tldr pages using fzf and sorts unique commands alphabetically.",
-  "work": " Opens directories in vs-code using fzf search.",
-  "edit": " Opens a file using code-file-fzf.sh located in ~/.local/bin."
+  "tldr": "Displays tldr pages using fzf and sorts unique commands alphabetically."
 }

@@ -38,4 +38,8 @@ if [[ -n "$SELECTED" ]]; then
   else
     code "$SELECTED"
   fi
+  kitty @ close-window
 fi
+
+# kitty_pid=$(ps -o ppid= -p $$)
+# kill "$kitty_pid"

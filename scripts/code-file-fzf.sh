@@ -7,7 +7,7 @@ BLUE="\033[1;34m"
 RESET="\033[0m"
 
 EXT_REGEX=".*\.(bash|zsh|sh|c|cpp|h|hpp|py|js|ts|java|cs|go|rs|rb|pl|php|lua|swift|kt|scala|m|vb|\
-html|css|scss|less|xml|json|yaml|yml|toml|ini|cfg|conf|md|markdown|rst|txt|log|csv|tsv|env|\
+html|css|scss|less|xml|json|jsonc|yaml|yml|toml|ini|cfg|conf|md|markdown|rst|txt|log|csv|tsv|env|\
 dockerfile|makefile|gradle|gitignore|editorconfig|gitattributes)$"
 
 # ─── Load Cache or Refresh ────────────────────────────────────────
@@ -54,4 +54,8 @@ if [[ -n "$SELECTED" ]]; then
   else
     xargs -d '\n' code <<< "$SELECTED"
   fi
+  kitty @ close-window
 fi
+
+# kitty_pid=$(ps -o ppid= -p $$)
+# kill "$kitty_pid"

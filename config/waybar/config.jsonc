@@ -8,14 +8,10 @@
     "height": 0,
     "modules-left": [
         "clock",
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
+        "hyprland/workspaces",
         "hyprland/window"
-        // "hyprland/app"
     ],
     "modules-right": [
-        "tray",
         "memory",
         "custom/gpu",
         "cpu",
@@ -27,9 +23,9 @@
         "pulseaudio",
         "pulseaudio#microphone"
     ],
-    "hyprland/app": {
+    "custom/app": {
         "format": "󰣇 {}",
-        "exec": "hyprctl activewindow -j | jq -r '.class'",
+        "exec": "title=$(hyprctl activewindow -j | jq -r '.title'); [ -z \"$title\" ] || [ \"$title\" = \"null\" ] && echo 'Heaurious' || echo \"$title\"",
         "interval": 1
     },
     "hyprland/window": {
@@ -41,12 +37,8 @@
         "on-click": "activate",
         "format": "{icon}"
     },
-    "tray": {
-        "icon-size": 13,
-        "spacing": 10
-    },
     "clock": {
-        "format": "{:%A    %B-%d-%Y    %I:%M:%S %p}",
+        "format": "{:%A   %B-%d-%Y    %I:%M:%S %p}",
         "interval": 1,
         "rotate": 0,
         "tooltip-format": "<tt>{calendar}</tt>",
@@ -84,7 +76,6 @@
         "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
         "format-icons": [
             "󰂃",
             "󰁺",
@@ -106,7 +97,7 @@
         "tooltip": true
     },
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
+        "format": "{icon} {volume}%",
         "tooltip": false,
         "format-muted": "  Muted",
         "on-click": "pamixer -t",
