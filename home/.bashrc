@@ -58,7 +58,7 @@ eval "$(starship init bash)"
 alias start='exec Hyprland'
 
 # Basic alias for running fastfetch
-alias f="fastfetch --logo-padding-left 3"
+alias f="fastfetch --logo-padding-left 3 --logo-padding-top 1"
 
 # Fuzzy search man pages
 alias man="~/.local/bin/man-fzf.sh"

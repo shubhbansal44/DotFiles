@@ -25,7 +25,21 @@ swww img "$new_wall" --transition-type outer --transition-duration 0.8 --transit
 # Save the index
 echo "$next_index" > "$index_file"
 
-# Generate blurred lock screen version
+# --- Dynamic lock screen overlay based on brightness ---
+
+# Get average brightness (0–255)
+brightness=$(magick "$new_wall" -resize 1x1 -format "%[fx:mean*255]" info:)
+
+# Map brightness to opacity (0.2–0.6)
+opacity=$(awk -v b="$brightness" 'BEGIN {
+  min_o=0.3; max_o=0.5;
+  opacity = min_o + (b / 255.0) * (max_o - min_o);
+  if (opacity > max_o) opacity = max_o;
+  if (opacity < min_o) opacity = min_o;
+  printf "%.2f", opacity;
+}')
+
+# Generate blurred and dimmed lock screen image
 magick "$new_wall" \
     -resize 1920x1080^ \
     -gravity center -extent 1920x1080 \
@@ -33,5 +47,6 @@ magick "$new_wall" \
     -colorspace sRGB \
     -alpha remove \
     -blur 0x8 \
+    \( -size 1920x1080 canvas:"rgba(0,0,0,$opacity)" \) -composite \
     -define png:color-type=2 \
     "$lockscreen_wall"
