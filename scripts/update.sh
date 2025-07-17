@@ -52,6 +52,8 @@ if [ ! -d "$CONFIG_DIR" ]; then
   exit 1
 fi
 
+shopt -s dotglob nullglob
+
 for dir in "$CONFIG_DIR"/*; do
   name=$(basename "$dir")
   source_path="$HOME/.config/$name"
@@ -64,6 +66,8 @@ for dir in "$CONFIG_DIR"/*; do
     echo "⚠️ Skipping $name — not found in ~/.config/"
   fi
 done
+
+shopt -u dotglob nullglob
 
 echo "🏠 Syncing home dotfiles..."
 if [ ! -d "$HOME_DIR" ]; then

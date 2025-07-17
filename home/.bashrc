@@ -209,3 +209,64 @@ dsummary() {
     done
     echo -e "   ├───🔚 ------------->\033[0;31mEnd"
 }
+
+_cd_fzf() {
+  # Set this to your base directory; here it's HOME
+  local BASE_DIR="$HOME"
+
+  local dir
+  dir=$(fd . "$BASE_DIR" --type d --exclude .git --exclude node_modules \
+    | fzf --height=40% --layout=reverse --border \
+          --preview 'exa -T --level=2 --icons --color=always {}' \
+          --preview-window=right:50%:wrap) || return
+
+  READLINE_LINE="cd \"$dir\""
+  READLINE_POINT=${#READLINE_LINE}
+}
+
+_cd_tab_handler() {
+  if [[ $READLINE_LINE =~ ^cd[[:space:]]*$ ]]; then
+    _cd_fzf
+  else
+    READLINE_LINE="${READLINE_LINE:0:$READLINE_POINT}\t${READLINE_LINE:$READLINE_POINT}"
+    READLINE_POINT=$((READLINE_POINT + 1))
+  fi
+}
+
+bind -x '"\C-g": _cd_tab_handler'
+
+_kill_fzf() {
+  local pids
+
+  pids=$(ps -eo pid,ppid,etime,%cpu,%mem,user,comm --no-headers \
+    | awk '{printf "%-6s %-6s %-10s %-5s %-5s %-15s %s\n", $1, $2, $3, $4, $5, $6, $7}' \
+    | grep -v "^ *$$" \
+    | grep -v "fzf" \
+    | fzf --multi \
+          --height=40% \
+          --layout=reverse \
+          --border \
+          --header='PID    PPID   ELAPSED    CPU   MEM   USER            COMMAND' \
+          --preview='pid=$(echo {} | awk "{print \$1}"); \
+            ps -p $pid -o pid,ppid,cmd,%cpu,%mem,etime --sort=-%cpu --no-headers \
+            | awk "{ \
+              printf \"\n🔹 PID      : %s\n🔹 PPID     : %s\n🔹 CPU      : %s%%\n🔹 MEM      : %s%%\n🔹 ELAPSED  : %s\n🔹 CMD      : %s\n\", \
+              \$1, \$2, \$4, \$5, \$6, substr(\$3, 1, 100) \
+            }"' \
+          --preview-window=right:50%:wrap \
+    | awk '{print $1}' | xargs) || return
+
+  READLINE_LINE="kill -9 $pids"
+  READLINE_POINT=${#READLINE_LINE}
+}
+
+_kill_tab_handler() {
+  if [[ $READLINE_LINE =~ ^kill[[:space:]]-9[[:space:]]*$ ]]; then
+    _kill_fzf
+  else
+    READLINE_LINE="${READLINE_LINE:0:$READLINE_POINT}\t${READLINE_LINE:$READLINE_POINT}"
+    READLINE_POINT=$((READLINE_POINT + 1))
+  fi
+}
+
+bind -x '"\C-k": _kill_tab_handler'

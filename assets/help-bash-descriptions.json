@@ -39,5 +39,9 @@
   "update": "Updates system packages with Pacman.",
   "forceupdate": "Updates the system packages with a force refresh.",
   "man": "Displays man pages using fzf and sorts unique commands alphabetically.",
-  "tldr": "Displays tldr pages using fzf and sorts unique commands alphabetically."
+  "tldr": "Displays tldr pages using fzf and sorts unique commands alphabetically.",
+  "_cd_fzf": " Navigates to the selected directory in a fzf interface from current location.",
+  "_cd_tab_handler": " Completes directory navigation using fzf if line starts with 'cd'.",
+  "_kill_fzf": " Filters and sends the process ID (PID) to kill command.",
+  "_kill_tab_handler": " \"Overrides default tab behavior to suggest processes for 'kill' commands.\""
 }

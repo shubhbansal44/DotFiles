@@ -2,7 +2,7 @@
 
 SEARCH_DIR="$HOME"
 CACHE_FILE="$HOME/.cache/code_file_cache"
-CACHE_TTL=1800  # cache duration in seconds (30 minutes)
+CACHE_TTL=3600  # cache duration in seconds (60 minutes)
 BLUE="\033[1;34m"
 RESET="\033[0m"
 
