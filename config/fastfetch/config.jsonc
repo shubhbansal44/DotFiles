@@ -5,7 +5,6 @@
     "type": "kitty-direct"
   },
   "modules": [
-    "break",
     "title",
     "separator",
     "os",

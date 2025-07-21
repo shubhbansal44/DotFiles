@@ -44,7 +44,6 @@ alias help-bash='~/.local/bin/help-bash.sh'
 alias ask="~/.local/bin/ask.sh"
 alias man="~/.local/bin/man-fzf.sh"
 alias tldr="~/.local/bin/tldr-fzf.sh"
-alias f="fastfetch --logo-padding-left 3 --logo-padding-top 1"
 alias start='exec Hyprland'
 
 # Config editing
@@ -59,6 +58,7 @@ alias sst='code ~/.config/starship/starship.toml'
 alias ktc='code ~/.config/kitty/kitty.conf'
 alias drc='code ~/.config/dunst/dunstrc'
 alias cvc='code ~/.config/cava/config'
+alias wtf='code ~/.config/wtf/config.yml'
 alias brc='code ~/.bashrc'
 alias orc='code ~/.zshrc'
 alias sbrc='source ~/.bashrc'
@@ -72,22 +72,67 @@ alias lsg='exa -al --git --icons --color=always --group-directories-first'
 alias lss='exa -al --sort=size --icons'
 alias lsd='exa -D --icons --group-directories-first'
 
+# Bat replacements for cat
+alias cat='bat'
+
+# MYSQL
+alias mysql='nocorrect mysql -u root -p'
+
 # ========== FUNCTIONS ==========
 
+f() {
+  tput reset
+  fastfetch \
+    --logo-padding-left 3 \
+    --logo-padding-top 1 \
+    --structure "break:title:separator:os:host:kernel:uptime:packages:shell:display:de:wm:wmtheme:theme:icons:font:cursor:terminal:terminalfont:cpu:gpu:memory:swap:disk:localip:battery:poweradapter:locale:break:colors"
+}
+
 typefetch() {
-  local padding_top=3
-  for ((i = 0; i < padding_top; i++)); do echo ""; done
+  tput reset
   fastfetch \
     --logo ~/.config/fastfetch/assets/fastfetch.txt \
     --logo-type file \
-    --logo-padding-left 3
+    --logo-padding-left 3 \
+    --logo-padding-top 1 \
+    --structure "break:break:break:title:separator:os:host:kernel:uptime:packages:shell:display:de:wm:wmtheme:theme:icons:font:cursor:terminal:terminalfont:cpu:gpu:memory:swap:disk:localip:battery:poweradapter:locale:break:colors"
 }
 
 flex() {
+  tput reset
   fastfetch \
     --logo ~/.config/fastfetch/assets/flex.txt \
     --logo-type file \
-    --logo-padding-left 3
+    --logo-padding-left 3 \
+    --logo-padding-top 5 \
+    --structure "break:title:separator:os:host:kernel:uptime:packages:shell:display:de:wm:wmtheme:theme:icons:font:cursor:terminal:terminalfont:cpu:gpu:memory:swap:disk:localip:battery:poweradapter:locale:break:colors"
+}
+
+skull() {
+  tput reset
+  fastfetch \
+    --logo ~/.config/fastfetch/assets/skull.txt \
+    --logo-type file \
+    --logo-padding-left 3 \
+    --structure "break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:break:title:separator:os:host:kernel:uptime:packages:shell:display:de:wm:wmtheme:theme:icons:font:cursor:terminal:terminalfont:cpu:gpu:memory:swap:disk:localip:battery:poweradapter:locale:break:colors"
+}
+
+skeleton() {
+  tput reset
+  fastfetch \
+    --logo ~/.config/fastfetch/assets/skeleton.txt \
+    --logo-type file \
+    --logo-padding-left 3 \
+    --structure "break:break:break:title:separator:os:host:kernel:uptime:packages:shell:display:de:wm:wmtheme:theme:icons:font:cursor:terminal:terminalfont:cpu:gpu:memory:swap:disk:localip:battery:poweradapter:locale:break:colors"
+}
+
+beserk() {
+  tput reset
+  fastfetch \
+    --logo ~/.config/fastfetch/assets/beserk.txt \
+    --logo-type file \
+    --logo-padding-left 3 \
+    --structure "break:break:break:title:separator:os:host:kernel:uptime:packages:shell:display:de:wm:wmtheme:theme:icons:font:cursor:terminal:terminalfont:cpu:gpu:memory:swap:disk:localip:battery:poweradapter:locale:break:colors"
 }
 
 dsummary() {

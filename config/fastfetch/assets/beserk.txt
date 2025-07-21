@@ -1,0 +1,32 @@
+[0m
+[0;31m                 aa                
+[0;31m               a aa M              
+[0;31m         aa    aaaaaa    aa        
+[0;31m       aaa       aaa      aaa      
+[0;31m     aaaa        aaa       aaaa    
+[0;31m   aaaa          aaa         aaaa  
+[0;31m aaaaaa          aaa          aaaaa
+[0;31m  aaaaa          aaa         aaaaaa
+[0;31m    aaaaaa       aaa       aaaaaa  
+[0;31m     aaaaaaa     aaa     aaaaaa    
+[0;31m        aaaaaa   aaa  aaaaaaa      
+[0;31m         aaaaaaaaaaaaaaaaaa        
+[0;31m           aaaaaaaaaaaaaa          
+[0;31m             aaaaaaaaaa            
+[0;31m              aaaaaaaa             
+[0;31m            aaaaaaaaaaaad          
+[0;31m          aaaaaaaaaaaaaaaa         
+[0;31m        aaaaaaa  aaa aaaaaaa       
+[0;31m      aaaaaa     aaa    aaaaaa     
+[0;31m    aaaaaa       aaa      aaaaaa   
+[0;31m  aaaaaa         aaa        aaaaaa 
+[0;31m aaaaaa          aaa         aaaaaa
+[0;31m   aaaaaa        aaa       aaaaaa  
+[0;31m     aaaaaa      aaa     aaaaaaa   
+[0;31m       aaaaaa    Maa   aaaaaaa     
+[0;31m        aaaaaaa  aaa aaaaaaa       
+[0;31m          aaaaaa aaMMaMaaa         
+[0;31m            aaaaaaaaaMaa           
+[0;31m              aaaaaaa              
+[0;31m                aaaa               
+[0m

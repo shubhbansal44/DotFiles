@@ -72,6 +72,12 @@ symbol = ' '
 style = 'fg:blue'
 format = '[$symbol($name )]($style)'
 
+[zig]
+symbol = ' '
+style = 'fg:yellow'
+format = '[$symbol($version )]($style)'
+detect_extensions = ['zig']
+
 [cmake]
 symbol = '△ '
 style = 'fg:blue'

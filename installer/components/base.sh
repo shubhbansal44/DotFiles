@@ -31,7 +31,7 @@ run_command "yay -S --noconfirm --needed networkmanager nm-connection-editor blu
 
 # Install shell and terminal tools (CLI, dev tools, visuals)
 print_info "Installing shell and CLI tools..."
-run_command "yay -S --noconfirm --needed git zsh tty-clock-git wtfutil rust gcc gdb cmake make nano btop git-lfs pacman-contrib lm_sensors dysk fzf neovim vim htop eza fastfetch figlet chafa jp2a ncdu starship xplr bind bat fd cava tldr tree cmatrix imagemagick" "Install terminal and dev CLI tools" "yes" "no"
+run_command "yay -S --noconfirm --needed git zsh tty-clock-git wtfutil rust gcc gdb cmake make nano btop git-lfs pacman-contrib lm_sensors dysk fzf neovim vim htop eza fastfetch numactl percona-server percona-server-clients task taskwarrior-tui figlet chafa jp2a ncdu starship xplr bind bat fd cava tldr tree cmatrix imagemagick" "Install terminal and dev CLI tools" "yes" "no"
 
 # Install fonts (Nerd fonts, emoji, dev fonts)
 print_info "Installing fonts..."
@@ -43,7 +43,7 @@ run_command "yay -S --noconfirm --needed pipewire pipewire-pulse wireplumber pam
 
 # Install desktop GUI applications
 print_info "Installing GUI applications..."
-run_command "yay -S --noconfirm --needed brave-bin whatsdesk-bin visual-studio-code-bin intellij-idea-community-edition obsidian spotify ristretto kitty nautilus" "Install GUI applications" "yes" "no"
+run_command "yay -S --noconfirm --needed brave-bin whatsdesk-bin mysql-workbench visual-studio-code-bin intellij-idea-community-edition obsidian spotify ristretto kitty nautilus" "Install GUI applications" "yes" "no"
 
 # Install Hyprland window manager and related appearance tools
 print_info "Installing Hyprland and UI tools..."
@@ -51,4 +51,4 @@ run_command "yay -S --noconfirm --needed hyprland hyprlock hypridle hyprpicker g
 
 # Install programming languages and dev tools
 print_info "Installing development tools..."
-run_command "yay -S --noconfirm --needed nodejs npm python-pip" "Install Node.js, NPM, and Python" "yes" "no"
+run_command "yay -S --noconfirm --needed nodejs zig npm python-pip" "Install Node.js, NPM, and Python" "yes" "no"

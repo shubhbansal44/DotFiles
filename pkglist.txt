@@ -53,6 +53,7 @@ make
 man-db
 mpv
 mtools
+mysql-workbench
 nano
 nautilus
 ncdu
@@ -62,12 +63,15 @@ nm-connection-editor
 nodejs
 noto-fonts-emoji
 npm
+numactl
 nwg-look
 obsidian
 os-prober
 pacman-contrib
 pamixer
 pavucontrol
+percona-server
+percona-server-clients
 pipewire
 pipewire-pulse
 polkit-kde-agent
@@ -85,6 +89,8 @@ spotify
 starship
 sudo
 swww
+task
+taskwarrior-tui
 tldr
 tree
 ttf-cascadia-code-nerd
@@ -113,4 +119,5 @@ xdg-desktop-portal-hyprland
 xplr
 yay
 yay-debug
+zig
 zsh
