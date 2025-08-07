@@ -64,6 +64,7 @@ alias orc='code ~/.zshrc'
 alias sbrc='source ~/.bashrc'
 alias sorc='source ~/.zshrc'
 alias bfr='code ~/.bash_profile'
+alias ofr='code ~/.zprofile'
 
 # Exa replacements for ls
 alias ls='exa -al --icons --color=always --group-directories-first --time-style=iso'
