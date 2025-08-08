@@ -84,9 +84,19 @@ alias mysql='nocorrect mysql -u root -p'
 f() {
   tput reset
   fastfetch \
-    --logo-padding-left 3 \
+    --logo-padding-left 1 \
     --logo-padding-top 1 \
     --structure "break:title:separator:os:host:kernel:uptime:packages:shell:display:de:wm:wmtheme:theme:icons:font:cursor:terminal:terminalfont:cpu:gpu:memory:swap:disk:localip:battery:poweradapter:locale:break:colors"
+}
+
+bcs() {
+  tput reset
+  fastfetch \
+    --logo ~/.config/fastfetch/assets/bcs.png \
+    --logo-type kitty-direct \
+    --logo-padding-left 2 \
+    --logo-padding-top 1 \
+    --structure "break:break:title:separator:os:host:kernel:uptime:packages:shell:display:de:wm:wmtheme:theme:icons:font:cursor:terminal:terminalfont:cpu:gpu:memory:swap:disk:localip:battery:poweradapter:locale:break:colors"
 }
 
 typefetch() {
@@ -94,7 +104,7 @@ typefetch() {
   fastfetch \
     --logo ~/.config/fastfetch/assets/fastfetch.txt \
     --logo-type file \
-    --logo-padding-left 3 \
+    --logo-padding-left 2 \
     --logo-padding-top 1 \
     --structure "break:break:break:title:separator:os:host:kernel:uptime:packages:shell:display:de:wm:wmtheme:theme:icons:font:cursor:terminal:terminalfont:cpu:gpu:memory:swap:disk:localip:battery:poweradapter:locale:break:colors"
 }
@@ -132,8 +142,8 @@ beserk() {
   fastfetch \
     --logo ~/.config/fastfetch/assets/beserk.txt \
     --logo-type file \
-    --logo-padding-left 3 \
-    --structure "break:break:break:title:separator:os:host:kernel:uptime:packages:shell:display:de:wm:wmtheme:theme:icons:font:cursor:terminal:terminalfont:cpu:gpu:memory:swap:disk:localip:battery:poweradapter:locale:break:colors"
+    --logo-padding-left 2 \
+    --structure "break:break:title:separator:os:host:kernel:uptime:packages:shell:display:de:wm:wmtheme:theme:icons:font:cursor:terminal:terminalfont:cpu:gpu:memory:swap:disk:localip:battery:poweradapter:locale:break:colors"
 }
 
 dsummary() {
