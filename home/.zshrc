@@ -79,6 +79,13 @@ alias cat='bat'
 # MYSQL
 alias mysql='nocorrect mysql -u root -p'
 
+# Cloudflare WARP Aliases
+alias vpn-connect='sudo systemctl start warp-svc && sleep 1 && warp-cli connect'
+alias vpn-disconnect='warp-cli disconnect && sudo systemctl stop warp-svc'
+alias vpn-status='warp-cli status'
+alias vpn-restart='warp-cli disconnect && sudo systemctl restart warp-svc && warp-cli connect'
+alias vpn-check='curl -s https://www.cloudflare.com/cdn-cgi/trace/'
+
 # ========== FUNCTIONS ==========
 
 f() {
@@ -86,7 +93,6 @@ f() {
   fastfetch \
     --logo-padding-left 1 \
     --logo-padding-top 1 \
-    --structure "break:title:separator:os:host:kernel:uptime:packages:shell:display:de:wm:wmtheme:theme:icons:font:cursor:terminal:terminalfont:cpu:gpu:memory:swap:disk:localip:battery:poweradapter:locale:break:colors"
 }
 
 bcs() {
@@ -116,7 +122,6 @@ flex() {
     --logo-type file \
     --logo-padding-left 3 \
     --logo-padding-top 5 \
-    --structure "break:title:separator:os:host:kernel:uptime:packages:shell:display:de:wm:wmtheme:theme:icons:font:cursor:terminal:terminalfont:cpu:gpu:memory:swap:disk:localip:battery:poweradapter:locale:break:colors"
 }
 
 skull() {

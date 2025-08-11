@@ -12,6 +12,7 @@ btop
 cava
 chafa
 cliphist
+cloudflare-warp-bin
 cmake
 cmatrix
 curl
