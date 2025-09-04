@@ -27,7 +27,7 @@ run_command "yay -S --noconfirm --needed base base-devel linux linux-firmware li
 
 # Install network-related packages (NetworkManager, Bluetooth)
 print_info "Installing networking packages..."
-run_command "yay -S --noconfirm --needed networkmanager nm-connection-editor bluez blueman bluez-utils" "Install networking and Bluetooth packages" "yes" "no"
+run_command "yay -S --noconfirm --needed networkmanager iw nm-connection-editor bluez blueman bluez-utils" "Install networking and Bluetooth packages" "yes" "no"
 
 # Install shell and terminal tools (CLI, dev tools, visuals)
 print_info "Installing shell and CLI tools..."
@@ -39,11 +39,11 @@ run_command "yay -S --noconfirm --needed ttf-cascadia-code-nerd ttf-cascadia-mon
 
 # Install audio and multimedia tools (Pipewire, VLC, etc.)
 print_info "Installing audio and multimedia tools..."
-run_command "yay -S --noconfirm --needed pipewire pipewire-pulse wireplumber pamixer pavucontrol vlc" "Install audio/media packages" "yes" "no"
+run_command "yay -S --noconfirm --needed pipewire pipewire-pulse cups hplip system-config-printer wireplumber pamixer pavucontrol vlc" "Install audio/media packages" "yes" "no"
 
 # Install desktop GUI applications
 print_info "Installing GUI applications..."
-run_command "yay -S --noconfirm --needed brave-bin whatsdesk-bin mysql-workbench visual-studio-code-bin intellij-idea-community-edition obsidian spotify ristretto kitty nautilus" "Install GUI applications" "yes" "no"
+run_command "yay -S --noconfirm --needed brave-bin whatsdesk-bin mysql-workbench visual-studio-code-bin postman-bin intellij-idea-community-edition obsidian spotify ristretto kitty nautilus" "Install GUI applications" "yes" "no"
 
 # Install Hyprland window manager and related appearance tools
 print_info "Installing Hyprland and UI tools..."

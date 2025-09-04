@@ -15,6 +15,7 @@ cliphist
 cloudflare-warp-bin
 cmake
 cmatrix
+cups
 curl
 dnsmasq
 dosfstools
@@ -33,6 +34,7 @@ git-filter-repo
 git-lfs
 grimblast-git
 grub
+hplip
 htop
 hypridle
 hyprland
@@ -40,6 +42,7 @@ hyprlock
 hyprpicker
 imagemagick
 intellij-idea-community-edition
+iw
 jp2a
 kitty
 kvantum
@@ -76,6 +79,7 @@ percona-server-clients
 pipewire
 pipewire-pulse
 polkit-kde-agent
+postman-bin
 python-pip
 qt5-graphicaleffects
 qt5-wayland
@@ -90,6 +94,7 @@ spotify
 starship
 sudo
 swww
+system-config-printer
 task
 taskwarrior-tui
 tldr
