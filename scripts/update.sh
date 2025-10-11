@@ -4,7 +4,7 @@
 # Syncs configs, home files, scripts, and assets
 # Optional --push to commit and push to Git
 
-DOTFILES_DIR="$HOME/Work/WORKSPACES/LINUX WORKSPACE/DotFiles"
+DOTFILES_DIR="/$HOME/Work/WORKSPACES/LINUX-WORKSPACE/Dotfiles/"
 CONFIG_DIR="$DOTFILES_DIR/config"
 HOME_DIR="$DOTFILES_DIR/home"
 ASSETS_DIR="$DOTFILES_DIR/assets"

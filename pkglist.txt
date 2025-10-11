@@ -9,6 +9,7 @@ bluez-utils
 brave-bin
 brightnessctl
 btop
+catppuccin-gtk-theme-mocha
 cava
 chafa
 cliphist
@@ -49,6 +50,7 @@ kvantum
 kvantum-theme-catppuccin-git
 less
 libnotify
+libreoffice-fresh
 linux
 linux-firmware
 linux-headers
@@ -65,6 +67,7 @@ neovim
 networkmanager
 nm-connection-editor
 nodejs
+noto-fonts
 noto-fonts-emoji
 npm
 numactl
@@ -76,6 +79,7 @@ pamixer
 pavucontrol
 percona-server
 percona-server-clients
+perl-image-exiftool
 pipewire
 pipewire-pulse
 polkit-kde-agent
@@ -98,6 +102,7 @@ system-config-printer
 task
 taskwarrior-tui
 tldr
+trash-cli
 tree
 ttf-cascadia-code-nerd
 ttf-cascadia-mono-nerd

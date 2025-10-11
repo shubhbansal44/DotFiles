@@ -12,6 +12,7 @@
         "hyprland/window"
     ],
     "modules-right": [
+        "tray",
         "memory",
         "custom/gpu",
         "cpu",
@@ -36,6 +37,10 @@
         "all-outputs": true,
         "on-click": "activate",
         "format": "{icon}"
+    },
+    "tray": {
+        "icon-size": 13,
+        "spacing": 10
     },
     "clock": {
         "format": "{:%A   %B-%d-%Y    %I:%M:%S %p}",

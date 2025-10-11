@@ -6,7 +6,7 @@ CACHE_TTL=3600  # cache duration in seconds (60 minutes)
 BLUE="\033[1;34m"
 RESET="\033[0m"
 
-EXT_REGEX=".*\.(bash|zsh|sh|c|cpp|h|hpp|py|js|ts|java|cs|go|rs|rb|pl|php|lua|swift|kt|scala|m|vb|\
+EXT_REGEX=".*\.(bash|zsh|sh|pdf|c|cpp|tex|h|hpp|py|js|ts|java|cs|go|rs|rb|pl|php|lua|swift|kt|scala|m|vb|\
 html|css|scss|less|xml|json|jsonc|yaml|yml|toml|ini|cfg|conf|md|markdown|rst|txt|log|csv|tsv|env|\
 dockerfile|makefile|gradle|gitignore|editorconfig|gitattributes)$"
 

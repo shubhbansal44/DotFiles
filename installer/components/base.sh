@@ -31,23 +31,23 @@ run_command "yay -S --noconfirm --needed networkmanager iw nm-connection-editor 
 
 # Install shell and terminal tools (CLI, dev tools, visuals)
 print_info "Installing shell and CLI tools..."
-run_command "yay -S --noconfirm --needed git zsh tty-clock-git wtfutil rust gcc gdb cmake make nano btop git-lfs pacman-contrib lm_sensors dysk fzf neovim vim htop eza fastfetch numactl percona-server percona-server-clients task taskwarrior-tui figlet chafa jp2a ncdu starship xplr bind bat fd cava tldr tree cmatrix imagemagick" "Install terminal and dev CLI tools" "yes" "no"
+run_command "yay -S --noconfirm --needed git zsh tty-clock-git wtfutil rust gcc gdb cmake make nano btop git-lfs pacman-contrib lm_sensors dysk fzf neovim vim htop eza fastfetch numactl percona-server percona-server-clients task trash-cli taskwarrior-tui figlet chafa jp2a ncdu starship xplr bind bat fd cava tldr tree cmatrix imagemagick" "Install terminal and dev CLI tools" "yes" "no"
 
 # Install fonts (Nerd fonts, emoji, dev fonts)
 print_info "Installing fonts..."
-run_command "yay -S --noconfirm --needed ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-firacode-nerd ttf-iosevka-nerd ttf-iosevkaterm-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono noto-fonts-emoji" "Install Nerd Fonts and emoji support" "yes" "no"
+run_command "yay -S --noconfirm --needed ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-firacode-nerd ttf-iosevka-nerd ttf-iosevkaterm-nerd ttf-jetbrains-mono noto-fonts ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono noto-fonts-emoji" "Install Nerd Fonts and emoji support" "yes" "no"
 
 # Install audio and multimedia tools (Pipewire, VLC, etc.)
 print_info "Installing audio and multimedia tools..."
-run_command "yay -S --noconfirm --needed pipewire pipewire-pulse cups hplip system-config-printer wireplumber pamixer pavucontrol vlc" "Install audio/media packages" "yes" "no"
+run_command "yay -S --noconfirm --needed pipewire pipewire-pulse perl-image-exiftool cups hplip system-config-printer wireplumber pamixer pavucontrol vlc" "Install audio/media packages" "yes" "no"
 
 # Install desktop GUI applications
 print_info "Installing GUI applications..."
-run_command "yay -S --noconfirm --needed brave-bin whatsdesk-bin mysql-workbench visual-studio-code-bin postman-bin intellij-idea-community-edition obsidian spotify ristretto kitty nautilus" "Install GUI applications" "yes" "no"
+run_command "yay -S --noconfirm --needed brave-bin whatsdesk-bin mysql-workbench visual-studio-code-bin postman-bin intellij-idea-community-edition obsidian spotify ristretto kitty nautilus" "Install GUI applications libreoffice-fresh" "yes" "no"
 
 # Install Hyprland window manager and related appearance tools
 print_info "Installing Hyprland and UI tools..."
-run_command "yay -S --noconfirm --needed hyprland hyprlock hypridle hyprpicker grimblast-git dunst rofi wlogout waybar nwg-look polkit-kde-agent kvantum kvantum-theme-catppuccin-git qt5ct qt6ct qt5-graphicaleffects rofimoji" "Install Hyprland and appearance tools" "yes" "no"
+run_command "yay -S --noconfirm --needed hyprland hyprlock hypridle hyprpicker grimblast-git dunst rofi wlogout waybar nwg-look polkit-kde-agent kvantum kvantum-theme-catppuccin-git qt5ct qt6ct qt5-graphicaleffects rofimoji catppuccin-gtk-theme-mocha" "Install Hyprland and appearance tools" "yes" "no"
 
 # Install programming languages and dev tools
 print_info "Installing development tools..."

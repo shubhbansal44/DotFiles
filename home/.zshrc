@@ -76,6 +76,9 @@ alias lsd='exa -D --icons --group-directories-first'
 # Bat replacements for cat
 alias cat='bat'
 
+# Prevention is better than cure
+alias rm='trash-put'
+
 # MYSQL
 alias mysql='nocorrect mysql -u root -p'
 
